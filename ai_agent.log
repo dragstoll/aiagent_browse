@@ -1,0 +1,332 @@
+2025-04-02 17:00:01,893 - INFO - Initializing AI model...
+2025-04-02 17:00:01,902 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-04-02 17:00:02,193 - DEBUG - https://huggingface.co:443 "GET /api/models/mlx-community/QwQ-32B-4bit/revision/main HTTP/11" 200 4577
+2025-04-02 17:00:03,163 - INFO - AI model and tokenizer initialized successfully.
+2025-04-02 17:00:03,163 - INFO - Starting task scheduler...
+2025-04-02 17:00:03,163 - INFO - Starting GUI...
+2025-04-02 17:00:18,515 - INFO - Executing task: Search Internet with output format: File
+2025-04-02 17:00:18,516 - INFO - Retrieving and scraping content for query: who is the president of usa now?
+2025-04-02 17:00:18,516 - INFO - Performing DuckDuckGo search for query: who is the president of usa now?
+2025-04-02 17:00:18,518 - DEBUG - Starting new HTTPS connection (1): duckduckgo.com:443
+2025-04-02 17:00:18,586 - DEBUG - https://duckduckgo.com:443 "GET /html/?q=who%20is%20the%20president%20of%20usa%20now? HTTP/11" 302 138
+2025-04-02 17:00:18,590 - DEBUG - Starting new HTTPS connection (1): html.duckduckgo.com:443
+2025-04-02 17:00:19,546 - DEBUG - https://html.duckduckgo.com:443 "GET /html/?q=who%20is%20the%20president%20of%20usa%20now? HTTP/11" 200 None
+2025-04-02 17:00:19,575 - INFO - Found 10 results for query: who is the president of usa now?
+2025-04-02 17:00:19,576 - INFO - Extracted actual URL: https://en.wikipedia.org/wiki/List_of_presidents_of_the_United_States
+2025-04-02 17:00:19,576 - INFO - Scraping content from URL: https://en.wikipedia.org/wiki/List_of_presidents_of_the_United_States
+2025-04-02 17:00:19,577 - DEBUG - Starting new HTTPS connection (1): en.wikipedia.org:443
+2025-04-02 17:00:19,635 - DEBUG - https://en.wikipedia.org:443 "GET /wiki/List_of_presidents_of_the_United_States HTTP/11" 200 66719
+2025-04-02 17:00:19,728 - INFO - Scraped 2743 characters from https://en.wikipedia.org/wiki/List_of_presidents_of_the_United_States
+2025-04-02 17:00:19,728 - INFO - Extracted actual URL: https://www.britannica.com/topic/Presidents-of-the-United-States-1846696
+2025-04-02 17:00:19,728 - INFO - Scraping content from URL: https://www.britannica.com/topic/Presidents-of-the-United-States-1846696
+2025-04-02 17:00:19,728 - DEBUG - Starting new HTTPS connection (1): www.britannica.com:443
+2025-04-02 17:00:19,995 - DEBUG - https://www.britannica.com:443 "GET /topic/Presidents-of-the-United-States-1846696 HTTP/11" 200 None
+2025-04-02 17:00:20,026 - INFO - Scraped 658 characters from https://www.britannica.com/topic/Presidents-of-the-United-States-1846696
+2025-04-02 17:00:20,026 - INFO - Extracted actual URL: https://simple.wikipedia.org/wiki/President_of_the_United_States
+2025-04-02 17:00:20,026 - INFO - Scraping content from URL: https://simple.wikipedia.org/wiki/President_of_the_United_States
+2025-04-02 17:00:20,027 - DEBUG - Starting new HTTPS connection (1): simple.wikipedia.org:443
+2025-04-02 17:00:20,083 - DEBUG - https://simple.wikipedia.org:443 "GET /wiki/President_of_the_United_States HTTP/11" 200 38937
+2025-04-02 17:00:20,134 - INFO - Scraped 4983 characters from https://simple.wikipedia.org/wiki/President_of_the_United_States
+2025-04-02 17:00:20,134 - INFO - Retrieved and scraped content from 3 sources.
+2025-04-02 17:00:20,134 - INFO - Generating a comprehensive answer using the AI model...
+2025-04-02 17:02:07,038 - INFO - Cleaning up resources...
+2025-04-02 17:02:07,038 - INFO - Cleanup completed successfully.
+2025-04-02 17:02:07,039 - INFO - Cleaning up resources...
+2025-04-02 17:02:07,039 - INFO - Cleanup completed successfully.
+2025-04-02 17:05:09,027 - INFO - Initializing AI model...
+2025-04-02 17:05:09,029 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-04-02 17:05:09,175 - DEBUG - https://huggingface.co:443 "GET /api/models/mlx-community/QwQ-32B-4bit/revision/main HTTP/11" 200 4577
+2025-04-02 17:05:10,016 - INFO - AI model and tokenizer initialized successfully.
+2025-04-02 17:05:10,016 - INFO - Starting task scheduler...
+2025-04-02 17:05:10,016 - INFO - Starting GUI...
+2025-04-02 17:05:27,387 - INFO - Executing task: Search Internet with output format: File
+2025-04-02 17:05:27,387 - INFO - Performing DuckDuckGo search for query: who is the president of usa?
+2025-04-02 17:05:27,389 - DEBUG - Starting new HTTPS connection (1): duckduckgo.com:443
+2025-04-02 17:05:27,493 - DEBUG - https://duckduckgo.com:443 "GET /html/?q=who%20is%20the%20president%20of%20usa? HTTP/11" 302 138
+2025-04-02 17:05:27,497 - DEBUG - Starting new HTTPS connection (1): html.duckduckgo.com:443
+2025-04-02 17:05:28,298 - DEBUG - https://html.duckduckgo.com:443 "GET /html/?q=who%20is%20the%20president%20of%20usa? HTTP/11" 200 None
+2025-04-02 17:05:28,317 - INFO - Found 10 results for query: who is the president of usa?
+2025-04-02 17:05:28,318 - INFO - Test task output saved to: output.txt
+2025-04-02 17:05:28,318 - INFO - Task Search Internet executed successfully.
+2025-04-02 17:08:34,426 - INFO - Initializing AI model...
+2025-04-02 17:08:34,428 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-04-02 17:08:34,633 - DEBUG - https://huggingface.co:443 "GET /api/models/mlx-community/QwQ-32B-4bit/revision/main HTTP/11" 200 4577
+2025-04-02 17:08:35,485 - INFO - AI model and tokenizer initialized successfully.
+2025-04-02 17:08:35,485 - INFO - Starting task scheduler...
+2025-04-02 17:08:35,485 - INFO - Starting GUI...
+2025-04-02 17:08:53,808 - INFO - Executing task: Search Internet with output format: File
+2025-04-02 17:08:53,808 - INFO - Retrieving and scraping content for query: who is the president of usa?
+2025-04-02 17:08:53,809 - INFO - Performing DuckDuckGo search for query: who is the president of usa?
+2025-04-02 17:08:53,811 - DEBUG - Starting new HTTPS connection (1): duckduckgo.com:443
+2025-04-02 17:08:53,893 - DEBUG - https://duckduckgo.com:443 "GET /html/?q=who%20is%20the%20president%20of%20usa? HTTP/11" 302 138
+2025-04-02 17:08:53,896 - DEBUG - Starting new HTTPS connection (1): html.duckduckgo.com:443
+2025-04-02 17:08:54,964 - DEBUG - https://html.duckduckgo.com:443 "GET /html/?q=who%20is%20the%20president%20of%20usa? HTTP/11" 200 None
+2025-04-02 17:08:54,990 - INFO - Found 10 results for query: who is the president of usa?
+2025-04-02 17:08:54,991 - INFO - Scraping content from URL: //duckduckgo.com/l/?uddg=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FList_of_presidents_of_the_United_States&rut=c6529fffc5ada4fbd933e245f0624867f6c9be9d6e43c70cb23ff735e04ed87d
+2025-04-02 17:08:54,991 - ERROR - Error scraping content from //duckduckgo.com/l/?uddg=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FList_of_presidents_of_the_United_States&rut=c6529fffc5ada4fbd933e245f0624867f6c9be9d6e43c70cb23ff735e04ed87d: Invalid URL '//duckduckgo.com/l/?uddg=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FList_of_presidents_of_the_United_States&rut=c6529fffc5ada4fbd933e245f0624867f6c9be9d6e43c70cb23ff735e04ed87d': No scheme supplied. Perhaps you meant https:////duckduckgo.com/l/?uddg=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FList_of_presidents_of_the_United_States&rut=c6529fffc5ada4fbd933e245f0624867f6c9be9d6e43c70cb23ff735e04ed87d?
+2025-04-02 17:08:54,991 - INFO - Scraping content from URL: //duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.britannica.com%2Ftopic%2FPresidents%2Dof%2Dthe%2DUnited%2DStates%2D1846696&rut=6b5d72458c669f639a8e3f5b509478e9c78facd1fa64b9d9925a632e5dc9783b
+2025-04-02 17:08:54,991 - ERROR - Error scraping content from //duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.britannica.com%2Ftopic%2FPresidents%2Dof%2Dthe%2DUnited%2DStates%2D1846696&rut=6b5d72458c669f639a8e3f5b509478e9c78facd1fa64b9d9925a632e5dc9783b: Invalid URL '//duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.britannica.com%2Ftopic%2FPresidents%2Dof%2Dthe%2DUnited%2DStates%2D1846696&rut=6b5d72458c669f639a8e3f5b509478e9c78facd1fa64b9d9925a632e5dc9783b': No scheme supplied. Perhaps you meant https:////duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.britannica.com%2Ftopic%2FPresidents%2Dof%2Dthe%2DUnited%2DStates%2D1846696&rut=6b5d72458c669f639a8e3f5b509478e9c78facd1fa64b9d9925a632e5dc9783b?
+2025-04-02 17:08:54,991 - INFO - Scraping content from URL: //duckduckgo.com/l/?uddg=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FPresident_of_the_United_States&rut=faa8df0931bae0f7c1ec92c05592fb7dd1297569f21a3217862746c5624bcfcc
+2025-04-02 17:08:54,991 - ERROR - Error scraping content from //duckduckgo.com/l/?uddg=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FPresident_of_the_United_States&rut=faa8df0931bae0f7c1ec92c05592fb7dd1297569f21a3217862746c5624bcfcc: Invalid URL '//duckduckgo.com/l/?uddg=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FPresident_of_the_United_States&rut=faa8df0931bae0f7c1ec92c05592fb7dd1297569f21a3217862746c5624bcfcc': No scheme supplied. Perhaps you meant https:////duckduckgo.com/l/?uddg=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FPresident_of_the_United_States&rut=faa8df0931bae0f7c1ec92c05592fb7dd1297569f21a3217862746c5624bcfcc?
+2025-04-02 17:08:54,991 - INFO - Retrieved and scraped content from 0 sources.
+2025-04-02 17:08:55,001 - INFO - Test task output saved to: output.txt
+2025-04-02 17:08:55,001 - INFO - Task Search Internet executed successfully.
+2025-04-02 17:08:55,001 - INFO - Clearing model memory...
+2025-04-02 17:08:55,001 - INFO - Initializing AI model...
+2025-04-02 17:08:55,137 - DEBUG - https://huggingface.co:443 "GET /api/models/mlx-community/QwQ-32B-4bit/revision/main HTTP/11" 200 4577
+2025-04-02 17:08:56,013 - INFO - AI model and tokenizer initialized successfully.
+2025-04-02 17:08:56,031 - INFO - Model memory cleared successfully.
+2025-04-02 17:10:21,457 - INFO - Initializing AI model...
+2025-04-02 17:10:21,460 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-04-02 17:10:21,631 - DEBUG - https://huggingface.co:443 "GET /api/models/mlx-community/QwQ-32B-4bit/revision/main HTTP/11" 200 4577
+2025-04-02 17:10:22,613 - INFO - AI model and tokenizer initialized successfully.
+2025-04-02 17:10:22,613 - INFO - Starting task scheduler...
+2025-04-02 17:10:22,613 - INFO - Starting GUI...
+2025-04-02 17:10:39,235 - INFO - Executing task: Search Internet with output format: File
+2025-04-02 17:10:39,235 - INFO - Retrieving and scraping content for query: who is the president of usa?
+2025-04-02 17:10:39,235 - INFO - Performing DuckDuckGo search for query: who is the president of usa?
+2025-04-02 17:10:39,237 - DEBUG - Starting new HTTPS connection (1): duckduckgo.com:443
+2025-04-02 17:10:39,303 - DEBUG - https://duckduckgo.com:443 "GET /html/?q=who%20is%20the%20president%20of%20usa? HTTP/11" 302 138
+2025-04-02 17:10:39,306 - DEBUG - Starting new HTTPS connection (1): html.duckduckgo.com:443
+2025-04-02 17:10:40,112 - DEBUG - https://html.duckduckgo.com:443 "GET /html/?q=who%20is%20the%20president%20of%20usa? HTTP/11" 200 None
+2025-04-02 17:10:40,131 - INFO - Found 10 results for query: who is the president of usa?
+2025-04-02 17:10:40,132 - INFO - Extracted actual URL: https://en.wikipedia.org/wiki/List_of_presidents_of_the_United_States
+2025-04-02 17:10:40,132 - INFO - Scraping content from URL: https://en.wikipedia.org/wiki/List_of_presidents_of_the_United_States
+2025-04-02 17:10:40,132 - DEBUG - Starting new HTTPS connection (1): en.wikipedia.org:443
+2025-04-02 17:10:40,202 - DEBUG - https://en.wikipedia.org:443 "GET /wiki/List_of_presidents_of_the_United_States HTTP/11" 200 66719
+2025-04-02 17:10:40,300 - INFO - Scraped 2743 characters from https://en.wikipedia.org/wiki/List_of_presidents_of_the_United_States
+2025-04-02 17:10:40,300 - INFO - Extracted actual URL: https://www.britannica.com/topic/Presidents-of-the-United-States-1846696
+2025-04-02 17:10:40,300 - INFO - Scraping content from URL: https://www.britannica.com/topic/Presidents-of-the-United-States-1846696
+2025-04-02 17:10:40,300 - DEBUG - Starting new HTTPS connection (1): www.britannica.com:443
+2025-04-02 17:10:40,893 - DEBUG - https://www.britannica.com:443 "GET /topic/Presidents-of-the-United-States-1846696 HTTP/11" 200 None
+2025-04-02 17:10:40,922 - INFO - Scraped 658 characters from https://www.britannica.com/topic/Presidents-of-the-United-States-1846696
+2025-04-02 17:10:40,922 - INFO - Extracted actual URL: https://simple.wikipedia.org/wiki/List_of_Presidents_of_the_United_States
+2025-04-02 17:10:40,922 - INFO - Scraping content from URL: https://simple.wikipedia.org/wiki/List_of_Presidents_of_the_United_States
+2025-04-02 17:10:40,923 - DEBUG - Starting new HTTPS connection (1): simple.wikipedia.org:443
+2025-04-02 17:10:40,993 - DEBUG - https://simple.wikipedia.org:443 "GET /wiki/List_of_Presidents_of_the_United_States HTTP/11" 200 40175
+2025-04-02 17:10:41,096 - INFO - Scraped 617 characters from https://simple.wikipedia.org/wiki/List_of_Presidents_of_the_United_States
+2025-04-02 17:10:41,096 - INFO - Retrieved and scraped content from 3 sources.
+2025-04-02 17:10:41,096 - INFO - Generating a comprehensive answer using the AI model...
+2025-04-02 17:20:19,234 - INFO - Initializing AI model...
+2025-04-02 17:20:19,238 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-04-02 17:20:19,414 - DEBUG - https://huggingface.co:443 "GET /api/models/mlx-community/QwQ-32B-4bit/revision/main HTTP/11" 200 4577
+2025-04-02 17:20:22,586 - INFO - AI model and tokenizer initialized successfully.
+2025-04-02 17:20:22,587 - INFO - Starting task scheduler...
+2025-04-02 17:20:22,587 - INFO - Starting GUI...
+2025-04-02 17:20:46,404 - INFO - Executing task: Search Internet with output format: File
+2025-04-02 17:20:46,404 - INFO - Retrieving and scraping content for query: who is the president of usa?
+2025-04-02 17:20:46,404 - INFO - Performing DuckDuckGo search for query: who is the president of usa?
+2025-04-02 17:20:46,406 - DEBUG - Starting new HTTPS connection (1): duckduckgo.com:443
+2025-04-02 17:20:46,494 - DEBUG - https://duckduckgo.com:443 "GET /html/?q=who%20is%20the%20president%20of%20usa? HTTP/11" 302 138
+2025-04-02 17:20:46,497 - DEBUG - Starting new HTTPS connection (1): html.duckduckgo.com:443
+2025-04-02 17:20:47,314 - DEBUG - https://html.duckduckgo.com:443 "GET /html/?q=who%20is%20the%20president%20of%20usa? HTTP/11" 200 None
+2025-04-02 17:20:47,344 - INFO - Found 10 results for query: who is the president of usa?
+2025-04-02 17:20:47,345 - INFO - Extracted actual URL: https://en.wikipedia.org/wiki/List_of_presidents_of_the_United_States
+2025-04-02 17:20:47,345 - INFO - Scraping content from URL: https://en.wikipedia.org/wiki/List_of_presidents_of_the_United_States
+2025-04-02 17:20:47,346 - DEBUG - Starting new HTTPS connection (1): en.wikipedia.org:443
+2025-04-02 17:20:47,424 - DEBUG - https://en.wikipedia.org:443 "GET /wiki/List_of_presidents_of_the_United_States HTTP/11" 200 66719
+2025-04-02 17:20:47,522 - INFO - Scraped 2743 characters from https://en.wikipedia.org/wiki/List_of_presidents_of_the_United_States
+2025-04-02 17:20:47,522 - INFO - Extracted actual URL: https://www.britannica.com/topic/Presidents-of-the-United-States-1846696
+2025-04-02 17:20:47,522 - INFO - Scraping content from URL: https://www.britannica.com/topic/Presidents-of-the-United-States-1846696
+2025-04-02 17:20:47,522 - DEBUG - Starting new HTTPS connection (1): www.britannica.com:443
+2025-04-02 17:20:47,770 - DEBUG - https://www.britannica.com:443 "GET /topic/Presidents-of-the-United-States-1846696 HTTP/11" 200 None
+2025-04-02 17:20:47,803 - INFO - Scraped 658 characters from https://www.britannica.com/topic/Presidents-of-the-United-States-1846696
+2025-04-02 17:20:47,803 - INFO - Extracted actual URL: https://simple.wikipedia.org/wiki/List_of_Presidents_of_the_United_States
+2025-04-02 17:20:47,803 - INFO - Scraping content from URL: https://simple.wikipedia.org/wiki/List_of_Presidents_of_the_United_States
+2025-04-02 17:20:47,804 - DEBUG - Starting new HTTPS connection (1): simple.wikipedia.org:443
+2025-04-02 17:20:47,873 - DEBUG - https://simple.wikipedia.org:443 "GET /wiki/List_of_Presidents_of_the_United_States HTTP/11" 200 40175
+2025-04-02 17:20:47,975 - INFO - Scraped 617 characters from https://simple.wikipedia.org/wiki/List_of_Presidents_of_the_United_States
+2025-04-02 17:20:47,976 - INFO - Retrieved and scraped content from 3 sources.
+2025-04-02 17:20:47,976 - INFO - Generating a comprehensive answer using the AI model...
+2025-04-02 17:21:04,883 - INFO - Comprehensive answer generated successfully.
+2025-04-02 17:21:04,884 - INFO - Test task output saved to: output.txt
+2025-04-02 17:21:04,884 - INFO - Task Search Internet executed successfully.
+2025-04-02 17:21:04,884 - INFO - Clearing model memory...
+2025-04-02 17:21:04,884 - INFO - Initializing AI model...
+2025-04-02 17:21:05,028 - DEBUG - https://huggingface.co:443 "GET /api/models/mlx-community/QwQ-32B-4bit/revision/main HTTP/11" 200 4577
+2025-04-02 17:21:05,808 - INFO - AI model and tokenizer initialized successfully.
+2025-04-02 17:21:05,826 - INFO - Model memory cleared successfully.
+2025-04-02 17:21:40,914 - INFO - Executing task: Search Internet with output format: File
+2025-04-02 17:21:40,914 - INFO - Retrieving and scraping content for query: who is taylor swift?
+2025-04-02 17:21:40,914 - INFO - Performing DuckDuckGo search for query: who is taylor swift?
+2025-04-02 17:21:40,916 - DEBUG - Starting new HTTPS connection (1): duckduckgo.com:443
+2025-04-02 17:21:40,988 - DEBUG - https://duckduckgo.com:443 "GET /html/?q=who%20is%20taylor%20swift? HTTP/11" 302 138
+2025-04-02 17:21:40,991 - DEBUG - Starting new HTTPS connection (1): html.duckduckgo.com:443
+2025-04-02 17:21:41,793 - DEBUG - https://html.duckduckgo.com:443 "GET /html/?q=who%20is%20taylor%20swift? HTTP/11" 200 None
+2025-04-02 17:21:41,808 - INFO - Found 11 results for query: who is taylor swift?
+2025-04-02 17:21:41,808 - INFO - Extracted actual URL: https://taylorswift.com
+2025-04-02 17:21:41,808 - INFO - Scraping content from URL: https://taylorswift.com
+2025-04-02 17:21:41,809 - DEBUG - Starting new HTTPS connection (1): taylorswift.com:443
+2025-04-02 17:21:42,161 - DEBUG - https://taylorswift.com:443 "GET / HTTP/11" 301 0
+2025-04-02 17:21:42,165 - DEBUG - Starting new HTTPS connection (1): www.taylorswift.com:443
+2025-04-02 17:21:42,228 - DEBUG - https://www.taylorswift.com:443 "GET / HTTP/11" 200 212
+2025-04-02 17:21:42,231 - INFO - Scraped 0 characters from https://taylorswift.com
+2025-04-02 17:21:42,231 - INFO - Extracted actual URL: https://en.wikipedia.org/wiki/Taylor_Swift
+2025-04-02 17:21:42,231 - INFO - Scraping content from URL: https://en.wikipedia.org/wiki/Taylor_Swift
+2025-04-02 17:21:42,233 - DEBUG - Starting new HTTPS connection (1): en.wikipedia.org:443
+2025-04-02 17:21:42,302 - DEBUG - https://en.wikipedia.org:443 "GET /wiki/Taylor_Swift HTTP/11" 200 None
+2025-04-02 17:21:42,611 - INFO - Scraped 63920 characters from https://en.wikipedia.org/wiki/Taylor_Swift
+2025-04-02 17:21:42,612 - INFO - Extracted actual URL: https://www.britannica.com/biography/Taylor-Swift
+2025-04-02 17:21:42,612 - INFO - Scraping content from URL: https://www.britannica.com/biography/Taylor-Swift
+2025-04-02 17:21:42,612 - DEBUG - Starting new HTTPS connection (1): www.britannica.com:443
+2025-04-02 17:21:43,219 - DEBUG - https://www.britannica.com:443 "GET /biography/Taylor-Swift HTTP/11" 200 None
+2025-04-02 17:21:43,249 - INFO - Scraped 12827 characters from https://www.britannica.com/biography/Taylor-Swift
+2025-04-02 17:21:43,250 - INFO - Retrieved and scraped content from 2 sources.
+2025-04-02 17:21:43,250 - INFO - Generating a comprehensive answer using the AI model...
+2025-04-02 17:28:01,694 - INFO - Initializing AI model...
+2025-04-02 17:28:01,696 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-04-02 17:28:01,869 - DEBUG - https://huggingface.co:443 "GET /api/models/mlx-community/QwQ-32B-4bit/revision/main HTTP/11" 200 4577
+2025-04-02 17:28:02,632 - INFO - AI model and tokenizer initialized successfully.
+2025-04-02 17:28:02,632 - INFO - Starting task scheduler...
+2025-04-02 17:28:02,632 - INFO - Starting GUI...
+2025-04-02 17:28:25,275 - INFO - Executing task: Search Internet with output format: File
+2025-04-02 17:28:25,276 - INFO - Retrieving and scraping content for query: who is taylor swift?
+2025-04-02 17:28:25,276 - INFO - Performing DuckDuckGo search for query: who is taylor swift?
+2025-04-02 17:28:25,278 - DEBUG - Starting new HTTPS connection (1): duckduckgo.com:443
+2025-04-02 17:28:25,384 - DEBUG - https://duckduckgo.com:443 "GET /html/?q=who%20is%20taylor%20swift? HTTP/11" 302 138
+2025-04-02 17:28:25,387 - DEBUG - Starting new HTTPS connection (1): html.duckduckgo.com:443
+2025-04-02 17:28:26,248 - DEBUG - https://html.duckduckgo.com:443 "GET /html/?q=who%20is%20taylor%20swift? HTTP/11" 200 None
+2025-04-02 17:28:26,273 - INFO - Found 11 results for query: who is taylor swift?
+2025-04-02 17:28:26,273 - INFO - Extracted actual URL: https://taylorswift.com
+2025-04-02 17:28:26,273 - INFO - Scraping content from URL: https://taylorswift.com
+2025-04-02 17:28:26,274 - DEBUG - Starting new HTTPS connection (1): taylorswift.com:443
+2025-04-02 17:28:26,578 - DEBUG - https://taylorswift.com:443 "GET / HTTP/11" 301 0
+2025-04-02 17:28:26,582 - DEBUG - Starting new HTTPS connection (1): www.taylorswift.com:443
+2025-04-02 17:28:26,607 - DEBUG - https://www.taylorswift.com:443 "GET / HTTP/11" 200 819
+2025-04-02 17:28:26,609 - INFO - Scraped 0 characters from https://taylorswift.com
+2025-04-02 17:28:26,610 - INFO - Extracted actual URL: https://en.wikipedia.org/wiki/Taylor_Swift
+2025-04-02 17:28:26,610 - INFO - Scraping content from URL: https://en.wikipedia.org/wiki/Taylor_Swift
+2025-04-02 17:28:26,611 - DEBUG - Starting new HTTPS connection (1): en.wikipedia.org:443
+2025-04-02 17:28:26,672 - DEBUG - https://en.wikipedia.org:443 "GET /wiki/Taylor_Swift HTTP/11" 200 271820
+2025-04-02 17:28:26,947 - INFO - Scraped 63920 characters from https://en.wikipedia.org/wiki/Taylor_Swift
+2025-04-02 17:28:26,948 - INFO - Extracted actual URL: https://www.britannica.com/biography/Taylor-Swift
+2025-04-02 17:28:26,948 - INFO - Scraping content from URL: https://www.britannica.com/biography/Taylor-Swift
+2025-04-02 17:28:26,948 - DEBUG - Starting new HTTPS connection (1): www.britannica.com:443
+2025-04-02 17:28:27,194 - DEBUG - https://www.britannica.com:443 "GET /biography/Taylor-Swift HTTP/11" 200 None
+2025-04-02 17:28:27,226 - INFO - Scraped 12827 characters from https://www.britannica.com/biography/Taylor-Swift
+2025-04-02 17:28:27,226 - INFO - Retrieved and scraped content from 2 sources.
+2025-04-02 17:28:27,226 - INFO - Generating a comprehensive answer using the AI model...
+2025-04-02 17:28:51,251 - INFO - Executing task: Search Internet with output format: File
+2025-04-02 17:28:51,251 - INFO - Retrieving and scraping content for query: who is taylor swift?
+2025-04-02 17:28:51,251 - INFO - Performing DuckDuckGo search for query: who is taylor swift?
+2025-04-02 17:28:51,252 - DEBUG - Starting new HTTPS connection (1): duckduckgo.com:443
+2025-04-02 17:28:51,341 - DEBUG - https://duckduckgo.com:443 "GET /html/?q=who%20is%20taylor%20swift? HTTP/11" 302 138
+2025-04-02 17:28:51,341 - DEBUG - Starting new HTTPS connection (1): html.duckduckgo.com:443
+2025-04-02 17:28:52,135 - DEBUG - https://html.duckduckgo.com:443 "GET /html/?q=who%20is%20taylor%20swift? HTTP/11" 200 None
+2025-04-02 17:28:52,139 - INFO - Found 11 results for query: who is taylor swift?
+2025-04-02 17:28:52,139 - INFO - Extracted actual URL: https://taylorswift.com
+2025-04-02 17:28:52,139 - INFO - Scraping content from URL: https://taylorswift.com
+2025-04-02 17:28:52,140 - DEBUG - Starting new HTTPS connection (1): taylorswift.com:443
+2025-04-02 17:28:52,463 - DEBUG - https://taylorswift.com:443 "GET / HTTP/11" 301 0
+2025-04-02 17:28:52,463 - DEBUG - Starting new HTTPS connection (1): www.taylorswift.com:443
+2025-04-02 17:28:52,484 - DEBUG - https://www.taylorswift.com:443 "GET / HTTP/11" 200 821
+2025-04-02 17:28:52,484 - INFO - Scraped 0 characters from https://taylorswift.com
+2025-04-02 17:28:52,484 - INFO - Extracted actual URL: https://en.wikipedia.org/wiki/Taylor_Swift
+2025-04-02 17:28:52,484 - INFO - Scraping content from URL: https://en.wikipedia.org/wiki/Taylor_Swift
+2025-04-02 17:28:52,485 - DEBUG - Starting new HTTPS connection (1): en.wikipedia.org:443
+2025-04-02 17:28:52,538 - DEBUG - https://en.wikipedia.org:443 "GET /wiki/Taylor_Swift HTTP/11" 200 271820
+2025-04-02 17:28:52,899 - INFO - Scraped 63920 characters from https://en.wikipedia.org/wiki/Taylor_Swift
+2025-04-02 17:28:52,899 - INFO - Extracted actual URL: https://www.britannica.com/biography/Taylor-Swift
+2025-04-02 17:28:52,899 - INFO - Scraping content from URL: https://www.britannica.com/biography/Taylor-Swift
+2025-04-02 17:28:52,900 - DEBUG - Starting new HTTPS connection (1): www.britannica.com:443
+2025-04-02 17:28:53,509 - DEBUG - https://www.britannica.com:443 "GET /biography/Taylor-Swift HTTP/11" 200 None
+2025-04-02 17:28:53,528 - INFO - Scraped 12827 characters from https://www.britannica.com/biography/Taylor-Swift
+2025-04-02 17:28:53,528 - INFO - Retrieved and scraped content from 2 sources.
+2025-04-02 17:28:53,528 - INFO - Generating a comprehensive answer using the AI model...
+2025-04-02 17:31:42,365 - INFO - Comprehensive answer generated successfully.
+2025-04-02 17:31:42,367 - INFO - Test task output saved to: output.txt
+2025-04-02 17:31:42,367 - INFO - Task Search Internet executed successfully.
+2025-04-02 17:31:42,367 - INFO - Clearing model memory...
+2025-04-02 17:34:29,394 - INFO - Initializing AI model...
+2025-04-02 17:34:29,400 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-04-02 17:34:29,558 - DEBUG - https://huggingface.co:443 "GET /api/models/mlx-community/QwQ-32B-4bit/revision/main HTTP/11" 200 4577
+2025-04-02 17:34:30,478 - INFO - AI model and tokenizer initialized successfully.
+2025-04-02 17:34:30,478 - INFO - Starting task scheduler...
+2025-04-02 17:34:30,478 - INFO - Starting GUI...
+2025-04-02 17:34:51,233 - INFO - Executing task: Search Internet with output format: File
+2025-04-02 17:34:51,234 - INFO - Retrieving and scraping content for query: who is the president of usa?
+2025-04-02 17:34:51,234 - INFO - Performing DuckDuckGo search for query: who is the president of usa?
+2025-04-02 17:34:51,236 - DEBUG - Starting new HTTPS connection (1): duckduckgo.com:443
+2025-04-02 17:34:51,338 - DEBUG - https://duckduckgo.com:443 "GET /html/?q=who%20is%20the%20president%20of%20usa? HTTP/11" 302 138
+2025-04-02 17:34:51,341 - DEBUG - Starting new HTTPS connection (1): html.duckduckgo.com:443
+2025-04-02 17:34:52,279 - DEBUG - https://html.duckduckgo.com:443 "GET /html/?q=who%20is%20the%20president%20of%20usa? HTTP/11" 200 None
+2025-04-02 17:34:52,305 - INFO - Found 10 results for query: who is the president of usa?
+2025-04-02 17:34:52,306 - INFO - Extracted actual URL: https://en.wikipedia.org/wiki/List_of_presidents_of_the_United_States
+2025-04-02 17:34:52,306 - INFO - Scraping content from URL: https://en.wikipedia.org/wiki/List_of_presidents_of_the_United_States
+2025-04-02 17:34:52,307 - DEBUG - Starting new HTTPS connection (1): en.wikipedia.org:443
+2025-04-02 17:34:52,376 - DEBUG - https://en.wikipedia.org:443 "GET /wiki/List_of_presidents_of_the_United_States HTTP/11" 200 66719
+2025-04-02 17:34:52,455 - INFO - Scraped 2743 characters from https://en.wikipedia.org/wiki/List_of_presidents_of_the_United_States
+2025-04-02 17:34:52,455 - INFO - Extracted actual URL: https://www.britannica.com/topic/Presidents-of-the-United-States-1846696
+2025-04-02 17:34:52,455 - INFO - Scraping content from URL: https://www.britannica.com/topic/Presidents-of-the-United-States-1846696
+2025-04-02 17:34:52,455 - DEBUG - Starting new HTTPS connection (1): www.britannica.com:443
+2025-04-02 17:34:52,741 - DEBUG - https://www.britannica.com:443 "GET /topic/Presidents-of-the-United-States-1846696 HTTP/11" 200 None
+2025-04-02 17:34:52,767 - INFO - Scraped 658 characters from https://www.britannica.com/topic/Presidents-of-the-United-States-1846696
+2025-04-02 17:34:52,768 - INFO - Extracted actual URL: https://simple.wikipedia.org/wiki/List_of_Presidents_of_the_United_States
+2025-04-02 17:34:52,768 - INFO - Scraping content from URL: https://simple.wikipedia.org/wiki/List_of_Presidents_of_the_United_States
+2025-04-02 17:34:52,768 - DEBUG - Starting new HTTPS connection (1): simple.wikipedia.org:443
+2025-04-02 17:34:52,825 - DEBUG - https://simple.wikipedia.org:443 "GET /wiki/List_of_Presidents_of_the_United_States HTTP/11" 200 40175
+2025-04-02 17:34:52,913 - INFO - Scraped 617 characters from https://simple.wikipedia.org/wiki/List_of_Presidents_of_the_United_States
+2025-04-02 17:34:52,913 - INFO - Retrieved and scraped content from 3 sources.
+2025-04-02 17:34:52,913 - INFO - Generating a comprehensive answer using the AI model...
+2025-04-02 17:35:18,771 - INFO - Comprehensive answer generated successfully.
+2025-04-02 17:35:18,780 - INFO - Test task output saved to: output.txt
+2025-04-02 17:35:18,780 - INFO - Task Search Internet executed successfully.
+2025-04-02 17:35:18,780 - INFO - Clearing model memory...
+2025-04-02 17:35:18,780 - INFO - Initializing AI model...
+2025-04-02 17:35:18,782 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-04-02 17:35:18,947 - DEBUG - https://huggingface.co:443 "GET /api/models/mlx-community/QwQ-32B-4bit/revision/main HTTP/11" 200 4577
+2025-04-02 17:35:19,763 - INFO - AI model and tokenizer initialized successfully.
+2025-04-02 17:35:19,782 - INFO - Model memory cleared successfully.
+2025-04-02 17:41:12,086 - INFO - Initializing AI model...
+2025-04-02 17:41:12,088 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-04-02 17:41:12,258 - DEBUG - https://huggingface.co:443 "GET /api/models/mlx-community/QwQ-32B-4bit/revision/main HTTP/11" 200 4577
+2025-04-02 17:41:13,045 - INFO - AI model and tokenizer initialized successfully.
+2025-04-02 17:41:13,045 - INFO - Starting task scheduler...
+2025-04-02 17:41:13,045 - INFO - Starting GUI...
+2025-04-02 17:41:29,459 - INFO - Executing task: Search Internet with output format: File
+2025-04-02 17:41:29,459 - INFO - Retrieving and scraping content for query: who is the president of usa?
+2025-04-02 17:41:29,459 - INFO - Performing DuckDuckGo search for query: who is the president of usa?
+2025-04-02 17:41:29,461 - DEBUG - Starting new HTTPS connection (1): duckduckgo.com:443
+2025-04-02 17:41:29,529 - DEBUG - https://duckduckgo.com:443 "GET /html/?q=who%20is%20the%20president%20of%20usa? HTTP/11" 302 138
+2025-04-02 17:41:29,532 - DEBUG - Starting new HTTPS connection (1): html.duckduckgo.com:443
+2025-04-02 17:41:30,385 - DEBUG - https://html.duckduckgo.com:443 "GET /html/?q=who%20is%20the%20president%20of%20usa? HTTP/11" 200 None
+2025-04-02 17:41:30,404 - INFO - Found 10 results for query: who is the president of usa?
+2025-04-02 17:41:30,405 - INFO - Extracted actual URL: https://en.wikipedia.org/wiki/List_of_presidents_of_the_United_States
+2025-04-02 17:41:30,405 - INFO - Scraping content from URL: https://en.wikipedia.org/wiki/List_of_presidents_of_the_United_States
+2025-04-02 17:41:30,406 - DEBUG - Starting new HTTPS connection (1): en.wikipedia.org:443
+2025-04-02 17:41:30,462 - DEBUG - https://en.wikipedia.org:443 "GET /wiki/List_of_presidents_of_the_United_States HTTP/11" 200 66719
+2025-04-02 17:41:30,555 - INFO - Scraped 2743 characters from https://en.wikipedia.org/wiki/List_of_presidents_of_the_United_States
+2025-04-02 17:41:30,555 - INFO - Extracted actual URL: https://www.britannica.com/topic/Presidents-of-the-United-States-1846696
+2025-04-02 17:41:30,555 - INFO - Scraping content from URL: https://www.britannica.com/topic/Presidents-of-the-United-States-1846696
+2025-04-02 17:41:30,556 - DEBUG - Starting new HTTPS connection (1): www.britannica.com:443
+2025-04-02 17:41:31,132 - DEBUG - https://www.britannica.com:443 "GET /topic/Presidents-of-the-United-States-1846696 HTTP/11" 200 None
+2025-04-02 17:41:31,163 - INFO - Scraped 658 characters from https://www.britannica.com/topic/Presidents-of-the-United-States-1846696
+2025-04-02 17:41:31,164 - INFO - Extracted actual URL: https://simple.wikipedia.org/wiki/List_of_Presidents_of_the_United_States
+2025-04-02 17:41:31,164 - INFO - Scraping content from URL: https://simple.wikipedia.org/wiki/List_of_Presidents_of_the_United_States
+2025-04-02 17:41:31,164 - DEBUG - Starting new HTTPS connection (1): simple.wikipedia.org:443
+2025-04-02 17:41:31,217 - DEBUG - https://simple.wikipedia.org:443 "GET /wiki/List_of_Presidents_of_the_United_States HTTP/11" 200 40175
+2025-04-02 17:41:31,316 - INFO - Scraped 617 characters from https://simple.wikipedia.org/wiki/List_of_Presidents_of_the_United_States
+2025-04-02 17:41:31,317 - INFO - Retrieved and scraped content from 3 sources.
+2025-04-02 17:41:31,317 - INFO - Generating a comprehensive answer using the AI model...
+2025-04-02 17:42:18,557 - INFO - Comprehensive answer generated successfully.
+2025-04-02 17:42:18,558 - INFO - Test task output saved to: output.txt
+2025-04-02 17:42:18,559 - INFO - Task Search Internet executed successfully.
+2025-04-02 17:42:18,559 - INFO - Clearing model memory...
+2025-04-02 17:42:18,559 - INFO - Initializing AI model...
+2025-04-02 17:42:18,560 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-04-02 17:42:18,852 - DEBUG - https://huggingface.co:443 "GET /api/models/mlx-community/QwQ-32B-4bit/revision/main HTTP/11" 200 4577
+2025-04-02 17:42:19,692 - INFO - AI model and tokenizer initialized successfully.
+2025-04-02 17:42:19,712 - INFO - Model memory cleared successfully.
+2025-04-02 17:44:28,352 - INFO - Executing task: Fetch Movies with output format: File
+2025-04-02 17:44:28,352 - INFO - Fetching movies from Cineman...
+2025-04-02 17:44:28,354 - DEBUG - Starting new HTTPS connection (1): www.cineman.ch:443
+2025-04-02 17:44:28,517 - DEBUG - https://www.cineman.ch:443 "GET /en/showtimes/Zurich/ HTTP/11" 200 None
+2025-04-02 17:44:28,548 - INFO - Fetched 0 movies successfully.
+2025-04-02 17:44:28,549 - INFO - Test task output saved to: output.txt
+2025-04-02 17:44:28,549 - INFO - Task Fetch Movies executed successfully.
+2025-04-02 17:44:28,549 - INFO - Clearing model memory...
+2025-04-02 17:44:28,549 - INFO - Initializing AI model...
+2025-04-02 17:44:28,550 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-04-02 17:44:28,717 - DEBUG - https://huggingface.co:443 "GET /api/models/mlx-community/QwQ-32B-4bit/revision/main HTTP/11" 200 4577
+2025-04-02 17:44:29,430 - INFO - AI model and tokenizer initialized successfully.
+2025-04-02 17:44:29,448 - INFO - Model memory cleared successfully.
