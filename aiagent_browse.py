@@ -157,7 +157,7 @@ def execute_task(task_name, output_format, custom_query=None, is_test=False, don
         if task_name == "Fetch Movies":
             data = fetch_movies()
         elif task_name == "Search Internet":
-            query = custom_query or "movies currently showing in Zurich Switzerland"
+            query = custom_query or "Search for movies currently playing in Zurich and their cinemas and print the information in a list."
             data = retrieve_and_scrape(query)
         else:
             data = []
