@@ -11,6 +11,9 @@ import logging
 import sys
 from mlx_lm import load, generate
 from urllib.parse import urlparse, parse_qs
+from sentence_transformers import SentenceTransformer, util
+import numpy as np
+import os
 
 print("Python executable:", sys.executable)
 print("Python path:", sys.path)
@@ -18,55 +21,13 @@ print("Python path:", sys.path)
 # Configure logging
 logging.basicConfig(
     filename="ai_agent.log",  # Log file name
+    # delete all content of the log file first
+    filemode='w',  # Overwrite the log file
+
     level=logging.DEBUG,      # Log level (DEBUG captures all events)
     format="%(asctime)s - %(levelname)s - %(message)s"  # Log format
 )
 
-# Lock for thread-safe access to the model
-model_lock = threading.Lock()
-
-# Initialize the AI model
-def initialize_model():
-    try:
-        logging.info("Initializing AI model...")
-        # Load the model and tokenizer
-        model, tokenizer = load("mlx-community/QwQ-32B-4bit")
-        logging.info("AI model and tokenizer initialized successfully.")
-        return model, tokenizer
-    except Exception as e:
-        logging.error(f"Error initializing AI model or tokenizer: {e}")
-        raise
-
-# Function to clear model memory
-def clear_model_memory():
-    try:
-        logging.info("Clearing model memory...")
-        global model, tokenizer
-        with model_lock:  # Ensure thread-safe access
-            model, tokenizer = initialize_model()  # Reinitialize the model and tokenizer
-        logging.info("Model memory cleared successfully.")
-    except Exception as e:
-        logging.error(f"Error clearing model memory: {e}")
-
-# Example task: Web scraping function to fetch movie data
-def fetch_movies():
-    try:
-        logging.info("Fetching movies from Cineman...")
-        url = "https://www.cineman.ch/en/showtimes/Zurich/"
-        response = requests.get(url)
-        response.raise_for_status()
-        soup = BeautifulSoup(response.text, 'html.parser')
-        movies = []
-        for movie in soup.select('.movie'):
-            title = movie.select_one('.title').text.strip()
-            cinema = movie.select_one('.cinema').text.strip()
-            link = movie.select_one('a')['href']
-            movies.append({'title': title, 'cinema': cinema, 'link': link})
-        logging.info(f"Fetched {len(movies)} movies successfully.")
-        return movies
-    except Exception as e:
-        logging.error(f"Error fetching movies: {e}")
-        return []
 
 # Function to ensure a URL has a valid scheme
 def ensure_valid_url(url):
@@ -115,6 +76,27 @@ def search_duckduckgo(query):
         logging.error(f"Error performing DuckDuckGo search: {e}")
         return []
 
+# Initialize the vector database FAISS and embedding model
+from langchain_community.vectorstores import FAISS
+
+from langchain_community.embeddings import HuggingFaceEmbeddings
+from langchain_community.vectorstores import Chroma
+
+from langchain_community.embeddings import SentenceTransformerEmbeddings
+
+embeddings = HuggingFaceEmbeddings(
+    model_name="sentence-transformers/all-MiniLM-L6-v2",
+    encode_kwargs={
+        "normalize_embeddings": True,
+    },
+)
+
+
+import langchain 
+from langchain.text_splitter import RecursiveCharacterTextSplitter
+
+    
+
 # Function to scrape content from a URL
 def scrape_content_from_url(url):
     try:
@@ -126,13 +108,13 @@ def scrape_content_from_url(url):
         paragraphs = soup.find_all('p')
         content = ' '.join([p.get_text() for p in paragraphs])
         logging.info(f"Scraped {len(content)} characters from {url}")
-        return content
+        return content  # Return the scraped content as a string
     except Exception as e:
         logging.error(f"Error scraping content from {url}: {e}")
         return ""
 
 # Function to retrieve and scrape content from relevant sources
-def retrieve_and_scrape(query, num_sources=3):
+def retrieve_and_scrape(query, num_sources=10):
     try:
         logging.info(f"Retrieving and scraping content for query: {query}")
         search_results = search_duckduckgo(query)
@@ -150,42 +132,70 @@ def retrieve_and_scrape(query, num_sources=3):
         logging.error(f"Error retrieving and scraping content: {e}")
         return []
 
+from langchain_community.llms.mlx_pipeline import MLXPipeline
+from langchain_core.prompts import ChatPromptTemplate
+from langchain.chains import create_retrieval_chain
+from langchain.chains.combine_documents import create_stuff_documents_chain
+from langchain_community.document_loaders import TextLoader
+
 # Generic task execution function
 def execute_task(task_name, output_format, custom_query=None, is_test=False, dont_think=False, max_tokens=1024):
     try:
         logging.info(f"Executing task: {task_name} with output format: {output_format}")
         if task_name == "Fetch Movies":
-            data = fetch_movies()
-        elif task_name == "Search Internet":
-            query = custom_query or "Search for movies currently playing in Zurich and their cinemas and print the information in a list."
+            query = "Search for movies currently playing in Zurich and their cinemas and print the information in a list."
             data = retrieve_and_scrape(query)
+        elif task_name == "Search Internet":
+            query = custom_query  # Ensure the custom query is used
+            data = retrieve_and_scrape(query)
+            # Ensure data is concatenated into a single string
+            data = " ".join(data) if isinstance(data, list) else data
         else:
-            data = []
+            data = ""
 
-        # Generate a comprehensive answer using the AI model
+        # Add data to vector database
         if data:
-            logging.info("Generating a comprehensive answer using the AI model...")
-            instruction = "Don't think, just answer." if dont_think else ""
-            input_text = (
-                f"{instruction}\n\n"
-                f"Answer the following query based on the provided context:\n\n"
-                f"Query: {custom_query or task_name}\n\n"
-                f"Context:\n{json.dumps(data, indent=2)}"
+            with open('context.txt', 'w') as file:
+                file.write(data)
+
+            loader = TextLoader("context.txt")
+            document = loader.load()
+
+            documents = RecursiveCharacterTextSplitter(
+                chunk_size=500,
+                chunk_overlap=50,
+            ).split_documents(document)
+
+            # Reinitialize vectorstore and retriever for each query
+            vectorstore = Chroma.from_documents(documents, embeddings)
+            retriever = vectorstore.as_retriever(search_type="similarity", search_kwargs={"k": 10})
+
+            # Reinitialize the language model for each query
+            llm = MLXPipeline.from_model_id(
+                "mlx-community/gemma-3-27b-it-4bit",
+                pipeline_kwargs={"max_tokens": 500, "temperature": 0.1},
             )
-            try:
-                with model_lock:  # Ensure thread-safe access to the model
-                    response = generate(model, tokenizer, input_text, max_tokens=max_tokens)
-                if isinstance(response, list) and len(response) > 0 and "generated_text" in response[0]:
-                    comprehensive_answer = response[0]["generated_text"]
-                elif isinstance(response, str):
-                    comprehensive_answer = response
-                else:
-                    raise ValueError("Unexpected response format from AI model.")
-                logging.info("Comprehensive answer generated successfully.")
-            except Exception as e:
-                logging.error(f"Error generating comprehensive answer: {e}")
-                comprehensive_answer = "Error generating a comprehensive answer. Check logs for details."
+
+            template = """
+            You are an assistant for question-answering tasks. Use the following pieces of retrieved context to answer the question. If you don't know the answer, just say that you don't know. Use three paragraphs maximum and keep the answer concise.
+            Question: {input} 
+            Context: {context} 
+            Answer:"""
+
+            prompt = ChatPromptTemplate.from_template(template)
+            doc_chain = create_stuff_documents_chain(llm, prompt)
+            chain = create_retrieval_chain(retriever, doc_chain)
+
+            # Generate a comprehensive answer using the AI model
+            logging.info("Generating a comprehensive answer using the AI model...")
+            instruction = "INSTRUCTION: Answer the following question directly, without explaining your reasoning." if dont_think else ""
+            query = f"{instruction} {query}"
+
+            response = chain.invoke({"input": query})
+            comprehensive_answer = response["answer"]
+
         else:
+            logging.warning("No data retrieved for the query.")
             comprehensive_answer = "No data available to generate a comprehensive answer."
 
         # Output the results
@@ -203,8 +213,7 @@ def execute_task(task_name, output_format, custom_query=None, is_test=False, don
         logging.error(f"Error executing task {task_name}: {e}")
         if is_test:
             print(f"Error executing task {task_name}. Check logs for details.")
-    finally:
-        clear_model_memory()  # Ensure model memory is cleared after task execution
+    
 
 # Function to execute tasks in a separate thread
 def execute_task_in_thread(task_name, output_format, custom_query=None, is_test=False, dont_think=False, max_tokens=1024):
@@ -245,7 +254,7 @@ def create_gui():
             try:
                 task_name = task_name_var.get()
                 output_format = output_format_var.get()
-                custom_query = query_entry.get() if task_name == "Search Internet" else None
+                custom_query = query_entry.get()  # Ensure the custom query is retrieved from the GUI
                 dont_think = dont_think_var.get()
                 max_tokens = int(max_tokens_entry.get())
 
@@ -295,14 +304,19 @@ def create_gui():
         max_tokens_entry.insert(0, "1024")  # Default value
         max_tokens_entry.grid(row=6, column=1, padx=5, pady=5)
 
+        ttk.Label(root, text="Model:").grid(row=7, column=0, padx=5, pady=5)
+        model_var = tk.StringVar(value="mlx-community/gemma-3-27b-it-4bit")
+        model_dropdown = ttk.Combobox(root, textvariable=model_var, values=["mlx-community/gemma-3-27b-it-4bit"])
+        model_dropdown.grid(row=7, column=1, padx=5, pady=5)
+
         add_task_button = ttk.Button(root, text="Add Task", command=add_task)
-        add_task_button.grid(row=7, column=0, columnspan=2, pady=10)
+        add_task_button.grid(row=8, column=0, columnspan=2, pady=10)
 
         test_task_button = ttk.Button(root, text="Test Task", command=test_task)
-        test_task_button.grid(row=8, column=0, columnspan=2, pady=10)
+        test_task_button.grid(row=9, column=0, columnspan=2, pady=10)
 
         status_label = ttk.Label(root, text="")
-        status_label.grid(row=9, column=0, columnspan=2, pady=10)
+        status_label.grid(row=10, column=0, columnspan=2, pady=10)
 
         root.mainloop()
     except Exception as e:
@@ -319,6 +333,5 @@ def run_scheduler():
         logging.error(f"Error in task scheduler: {e}")
 
 if __name__ == "__main__":
-    model, tokenizer = initialize_model()
     threading.Thread(target=run_scheduler, daemon=True).start()
     create_gui()
